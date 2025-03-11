@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    --bg: #ffffff;
+    --bg2: #f4f4f4;
+    --bg3: #dddddd;
+    --fg: #000000;
+    --fg2: #111111;
+    --fg3: #444444;
+    --special: #c955e7;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #222222;
+        --bg2: #2e2e2e;
+        --bg3: #444444;
+        --fg: #ffffff;
+        --fg2: #eeeeee;
+        --fg3: #aaaaaa;
+    }
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    font-variant-ligatures: none;
+}
+
+h1 {
+    margin-block: 2rem;
+}
+
+h2 {
+    margin-block: 0.5rem 0.5rem;
+}
+
+h3 {
+    margin-block: 0.3rem 0.3rem;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: var(--fg);
+
+    &:hover {
+        color: var(--special);
+
+        i {
+            color: var(--special);
+        }
+    }
+}
+
+i {
+    color: var(--fg);
+}
+
+*:focus {
+    outline: 1px solid var(--special);
+}
+
+input {
+    padding: 0.2rem 0.5rem;
+    background-color: var(--bg2);
+    color: var(--fg);
+    border: 1px solid var(--bg3);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="range"] {
+    accent-color: var(--special)
+}
+
+button {
+    background-color: var(--bg2);
+    color: var(--fg);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--bg3);
+    border-radius: 4px;
+
+    &:hover {
+        background-color: var(--special);
+    }
+
+    &:disabled {
+        color: var(--fg3);
+
+        &:hover {
+            background-color: var(--bg2);
+        }
+    }
+}
+
+select {
+    background: var(--bg2);
+    color: var(--fg);
+    outline: none;
+    border: 1px solid var(--bg3);
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 4px;
+}
