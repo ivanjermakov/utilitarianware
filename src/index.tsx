@@ -2,13 +2,17 @@
 import { Route, Router } from '@solidjs/router'
 import { render } from 'solid-js/web'
 import './index.scss'
-import { Home } from './component/Home'
+import { Home } from './component/home/Home'
+import { Header } from './component/header/Header'
 
 render(
     () => (
-        <Router>
-            <Route path={'/'} component={Home} />
-        </Router>
+        <div class="main">
+            <Header />
+            <Router>
+                <Route path={'/'} component={Home} />
+            </Router>
+        </div>
     ),
     document.getElementById('root')!
 )
